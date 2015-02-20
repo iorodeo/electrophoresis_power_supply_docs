@@ -26,10 +26,10 @@ Part  Position    Qty     Description                Vendor      PN
 1     L1          1       100uH power inductor        Digikey    M8271-ND	
 2     SW1         1       slide switch                Digikey    CKC5102-ND	
 3     P1          1       DC Jack, 2.1mm              Jameco     137673
-4     P2          1       Jumper                      Jameco
+4     P2          1       Jumper                      Digikey    S9341-ND
 5     P2          1       2x1 pin array               Digikey    SAM1031-50-ND
 6     C1, C3      2       100nF, 50V capacitor        Digikey    445-5258-ND	
-7     RV1	      1       Knob
+7     RV1         1       Knob                        Jameco     265051
 8     U1          1       TO220 vertical heat sink    Digikey    A10764-ND
 9     T1          1       IRF644 transistor (FET)     Digikey    IRF644PBF-ND
 10    RV1         1       50 K Rotary potentiometer   Digikey    P3C3503-ND	

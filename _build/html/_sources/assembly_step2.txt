@@ -33,17 +33,19 @@ Place the top onto the case and secure with the remaining four 1/4" screws
    :align:  center
 
 
-Mount the knob onto the flat side of the potentiometer. 
+Mount the knob onto the flat side of the potentiometer 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-With this style of button, there is a notch which you line up with the flat side of the potentiometer. Push the button all the way down onto the potentiometer. It is a tight fit so you have to push with some force but the knob should fit into the top hole on the enclosure.
+This style of knob uses a set screw for mounting onto the potentiometer. Place the knob onto the potentiometer so that the set screw is on the same side as the flat-side of the potentiometer. 
+Use the mini-screwdriver blade to tighten the set screw down as shown in the images below. 
 
-.. figure:: image_19f.JPG
+.. figure:: _static/knob_1_2.png
    :align:  center
+
 
 Image of the final assembled device 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. figure:: image_19b.JPG
+.. figure:: _static/knob_3.png
    :align:  center
 
 
