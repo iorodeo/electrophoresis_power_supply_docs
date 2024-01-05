@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PCB design and schematic &#8212; Electrophoresis variable power supply</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Power supply PCB and components" href="components.html" />
+    <link rel="prev" title="Open source DIY Kit" href="index.html" /> 
+  </head>
+  <body role="document">
+      <div class="header" role="banner"><a href="http://www.iorodeo.com"  target="_blank">
+  <img class="rightlogo" src="_static/logo_2.png" alt="Logo"/>
+  </a><h1 class="heading"><a href="index.html">
+  <span>Electrophoresis variable power supply</span></a></h1>
+<h2 class="heading"><span>PCB design and schematic</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="index.html">Open source DIY Kit</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="components.html">Power supply PCB and components</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="pcb-design-and-schematic">
+<h1>PCB design and schematic<a class="headerlink" href="#pcb-design-and-schematic" title="Permalink to this headline">¶</a></h1>
+<p>The design for the electrophoresis power supply PCB is based on the Maxim high efficiency MAX1771 step-up DC-DC controller and boosts a 15V input, from an external wall-wart power supply, to an adjustable 25-100V output. The power supply uses a switch-mode design in a step-up (boost) topology -  as shown in figure 2 of Maxim&#8217;s <a class="reference external" href="http://www.maximintegrated.com/app-notes/index.mvp/id/4087">An Introduction to switch-mode power supplies</a>. An important source of inspiration for this design was the open source <a class="reference external" href="http://www.desmith.net/NMdS/Electronics/NixiePSU.html">150-220V Nixie tube power supply</a> designed by Nick de Smith.</p>
+<p><strong>A schematic of the power supply design.</strong></p>
+<div class="figure align-center">
+<img alt="_images/image_29.JPG" src="_images/image_29.JPG" />
+</div>
+<p>The fundamental components of the design are the MAX1771 DC-DC controller (U1), a MOSFET switch (T1), an inductor (L1), a diode (D1) and an output capacitor (C5). In the design the controller regulates the output voltage via a <a class="reference external" href="http://en.wikipedia.org/wiki/Pulse-frequency_modulation">Pulse-Frequency Modulated</a> (PFM) signal applied to the gate of the MOSFET. When this signal is high the MOSFET switch is turned on and when this signal is low the MOSFET is turned off. The controller adjusts the pulse rate of the PFM signal, based on feedback from the output, in order to maintain a constant output voltage. The PFM signal divides the operating cycle of the power supply into charging and discharging phases. During the charging phase, the MOSFET is turned on and  energy is stored in the inductor, the diode is reverse biased preventing current flow, and the load is supported by energy stored in the output capacitor. During the discharging phase the MOSFET is turned off, the diode is forward biased and energy is transferred from the inductor to the load and the output capacitor.</p>
+<p>The magnitude of output voltage of the power supply is set using a <a class="reference external" href="http://en.wikipedia.org/wiki/Voltage_divider">voltage divider</a> on the feedback from the output to the DC-DC controller.  In the schematic this voltage divider consists of resistors R1, R3 and RV1. Using the values of these resistors the output voltage of the supply can be determined via the formula Vout = Vref (R2/(R3 + RV1) + 1) where Vref  has a value of 1.5 V. For this design we used fixed resistors for R2 and R3 with values of 1M ohm and 15k ohm respectively. For RV1 we selected a variable resistor with 0-50k ohm range. Plugging these values into the formula above gives a theoretical output range of roughly 25-100 V.</p>
+<p>When determining the required voltage output, we followed the recommended guidelines of 5 V/cm, where cm refers to the distance between the two electrodes. For our mini-gel system, electrode distance is 17 cm, so ideally we should run the gel at 85 V.</p>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="index.html">Open source DIY Kit</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="components.html">Power supply PCB and components</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2013, IO Rodeo.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.3.
+    </div>
+  </body>
+</html>
